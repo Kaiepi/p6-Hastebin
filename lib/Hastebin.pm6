@@ -1,7 +1,7 @@
 use v6.d;
 use Cro::HTTP::Client;
 use Cro::HTTP::Response;
-unit class Hastebin:ver<0.0.1>:auth<github:Kaiepi>;
+unit class Hastebin:ver<0.0.2>:auth<github:Kaiepi>;
 
 method get(Str $url --> Str) {
     my Str $key = $url.subst: / [ [ https?\:\/\/ ]? hastebin\.com\/ [ raw\/ ]? ]? ( \w+ ) [ \.\w+ ]? /, $0;
