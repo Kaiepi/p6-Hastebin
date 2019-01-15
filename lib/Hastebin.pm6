@@ -6,13 +6,15 @@ unit class Hastebin:ver<0.0.2>:auth<github:Kaiepi>;
 method get(Str $url --> Str) {
     my Str $key = $url.subst: / [ [ https?\:\/\/ ]? hastebin\.com\/ [ raw\/ ]? ]? ( \w+ ) [ \.\w+ ]? /, $0;
     my Cro::HTTP::Response $resp = await Cro::HTTP::Client.get:
-        "https://hastebin.com/raw/$key";
+        "https://hastebin.com/raw/$key",
+        http => '1.1';
     await $resp.body-text
 }
 
 method post(Str $content --> Str) {
     my Cro::HTTP::Response $resp = await Cro::HTTP::Client.post:
         'https://hastebin.com/documents',
+        http             => '1.1',
         body             => $content,
         content-type     => 'application/json; charset=utf-8',
         body-serializers => [Cro::HTTP::BodySerializer::JSON.new];
