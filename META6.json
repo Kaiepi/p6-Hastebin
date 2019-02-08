@@ -3,7 +3,7 @@
     "Ben Davies"
   ],
   "build-depends" : [ ],
-  "depends" : [ ],
+  "depends" : [ "Cro::HTTP" ],
   "description" : "Hastebin client API",
   "license" : "Artistic-2.0",
   "name" : "Hastebin",
