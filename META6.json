@@ -15,5 +15,5 @@
   "source-url" : "https://github.com/Kaiepi/p6-Hastebin.git",
   "tags" : [ "API" ],
   "test-depends" : [ ],
-  "version" : "0.0.3"
+  "version" : "0.0.4"
 }
